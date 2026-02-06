@@ -27,6 +27,8 @@ The goal of this project is to build a machine learning model that predicts CKD 
 
 ## Approach
 
+- Data was split into training and test sets using stratified sampling to preserve class balance.
+
 ### 1. Exploratory Data Analysis (EDA)
 
 - Inspected data types, distributions, and missing values
@@ -52,11 +54,11 @@ The goal of this project is to build a machine learning model that predicts CKD 
 ### 4. Model Comparison: Random Forest
 
 - Trained a Random Forest classifier to capture non-linear relationships
-- After removing downstream clinical variables to prevent data leakage, Random Forest achieved near-perfect performance
+- After removing downstream clinical variables (e.g., Dialysis_Needed) to prevent data leakage, Random Forest achieved near-perfect performance
 
 #### Important Note on Dataset Characteristics
 
-The near-perfect performance of Random Forest suggests the dataset may be rule-based or synthetically generated, with CKD status deterministically derived from clinical thresholds (e.g., GFR, creatinine levels).  
+The near-perfect performance of Random Forest suggests the dataset may be rule-based or derived from deterministic clinical thresholds, with CKD status deterministically derived from clinical thresholds (e.g., GFR, creatinine levels).  
 Logistic Regression is therefore retained as a realistic and interpretable baseline for real-world clinical scenarios.
 
 ---
